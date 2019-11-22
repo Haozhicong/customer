@@ -1,13 +1,12 @@
 module.exports = {
     apps: [{
         name: 'customer',
-        script: 'app.js',
+        script: './bin/www',
         args: 'null',
-        instances: 2, // 集群实例，可以只有一个，这样表现上与fork无异，但可以用scale
+        instances: 4,
         exec_mode: "cluster", // 集群模式，如不指定，默认为fork
         autorestart: false,
         min_uptime: "60s",
-        max_restarts: 3,
         watch: false,
         //error_file: "./logs/app-err.log",
         //out_file: "./logs/app-out.log",
@@ -23,5 +22,5 @@ module.exports = {
         env_production: {
             NODE_ENV: 'production'
         }
-    }],
+    }]
 };
