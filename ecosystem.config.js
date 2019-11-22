@@ -4,7 +4,6 @@ module.exports = {
         script: './bin/www',
         args: 'null',
         instances: 4,
-        exec_mode: "cluster", // 集群模式，如不指定，默认为fork
         autorestart: false,
         min_uptime: "60s",
         watch: false,
@@ -23,4 +22,5 @@ module.exports = {
             NODE_ENV: 'production'
         }
     }]
+
 };
